@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画クリック座標取得プレーヤー</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="container">
+        <div class="file-input-container">
+            <input type="file" id="videoInput" accept="video/mp4" class="file-input">
+            <label for="videoInput" class="file-input-label">動画を開く</label>
+        </div>
+        <div class="main-flex-container">
+            <div class="video-container">
+                <video id="videoPlayer" preload="metadata">
+                    お使いのブラウザは動画再生に対応していません。
+                </video>
+                <div class="video-controls">
+                    <div class="controls-row">
+                        <button id="playPauseButton" class="control-button">再生</button>
+                        <input type="range" id="seekBar" value="0" class="seek-bar">
+                        <input type="range" id="volumeBar" class="volume-bar" min="0" max="1" step="0.1" value="1">
+                        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="frame-controls">
+                    <button id="prevFrame" class="frame-button">◀ 前フレーム</button>
+                    <div class="frame-info">
+                        <span>現在のフレーム: </span>
+                        <span id="currentFrame">0</span>
+                        <span> / </span>
+                        <span id="totalFrames">0</span>
+                    </div>
+                    <button id="nextFrame" class="frame-button">次フレーム ▶</button>
+                </div>
+                <div class="frame-rate-control">
+                    <label for="frameRate">フレームレート (fps):</label>
+                    <input type="number" id="frameRate" value="30" min="1" max="60">
+                </div>
+            </div>
+            <div class="info-container">
+                <div class="click-info">
+                    <h3>クリック情報:</h3>
+                    <p>X座標: <span id="xCoord">-</span></p>
+                    <p>Y座標: <span id="yCoord">-</span></p>
+                    <p>時間: <span id="timeStamp">-</span> 秒</p>
+                    <button id="addData" class="add-button">データを追加</button>
+                </div>
+                <div class="data-table-container">
+                    <div class="table-header">
+                        <h3>記録したデータ</h3>
+                        <button id="exportCSV" class="export-button">CSVファイルで出力</button>
+                    </div>
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>X座標</th>
+                                <th>Y座標</th>
+                                <th>時間(秒)</th>
+                                <th>補足</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
