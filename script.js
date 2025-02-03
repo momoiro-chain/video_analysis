@@ -279,14 +279,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const noteCell = row.insertCell(4);
         const noteInput = document.createElement('input');
         noteInput.type = 'text';
-        noteInput.className = 'note-input';
+        noteInput.className = 'note-input default-invible';
         noteInput.placeholder = '補足を入力';
         noteCell.appendChild(noteInput);
 
         const deleteCell = row.insertCell(5);
         const deleteButton = document.createElement('button');
         deleteButton.textContent = '削除';
-        deleteButton.className = 'delete-button';
+        deleteButton.className = 'delete-button default-invible';
         deleteButton.onclick = function() {
             dataTable.removeChild(row);
         };

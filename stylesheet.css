@@ -258,3 +258,7 @@ th {
         margin: 0 auto;
     }
 }
+
+.default-invible {
+    visibility: hidden;
+}
