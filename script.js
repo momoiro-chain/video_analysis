@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTimeSpan = document.getElementById('currentTime');
     const durationSpan = document.getElementById('duration');
     const playPauseButton = document.getElementById('playPauseButton');
-    
+    // const toggleDisplayButton = document.getElementById("display-comment-button")
+
     let currentCoords = {
         x: null,
         y: null,
@@ -292,6 +293,13 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         deleteCell.appendChild(deleteButton);
     });
+
+    // //displayの切り替え
+    // function toggleDisplayButton.addEventListener("click", function() {
+
+    // })
+
+
 
     // CSV出力関数
     function exportToCSV() {
