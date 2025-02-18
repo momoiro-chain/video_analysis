@@ -304,8 +304,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // CSV出力関数
     function exportToCSV() {
         try {
-            const tbody = dataTable.getElementsByTagName('tbody')[0];
-            const rows = Array.from(tbody.getElementsByTagName('tr'));
+            // const tbody = dataTable.getElementsByTagName('tbody')[0];
+            const rows = Array.from(dataTable.getElementsByTagName('tr'));
             
             if (rows.length === 0) {
                 alert('出力するデータがありません。');
